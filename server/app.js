@@ -3,8 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//my package
 var csrf = require('csurf');
-
 require('app-module-path').addPath(__dirname);
 
 var indexRouter = require('app/routes/index');
