@@ -4,7 +4,6 @@ class SiteController extends  controller{
 
 
         index(req,res){
-
             res.json('Site Controller');
         }
 
