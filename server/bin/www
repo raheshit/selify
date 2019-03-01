@@ -3,7 +3,6 @@
 /**
  * Module dependencies.
  */
-require('app-module-path').addPath(__dirname);
 
 var app = require('../app');
 var debug = require('debug')('server:server');
