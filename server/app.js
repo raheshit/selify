@@ -44,12 +44,14 @@ app.use(function(err, req, res, next) {
 
 // secure app config
 app.use(csrf({ cookie: true }));
+
 app.use( function (req, res, next) {
-  res.locals.csrfToken = req.csrfToken()
+  res.locals.csrfToken = req.csrfToken();
   next()
 });
+
 app.post('*', function (req, res, next) {
-  res.locals.csrfToken = req.csrfToken()
+  res.locals.csrfToken = req.csrfToken();
   next()
 });
 
