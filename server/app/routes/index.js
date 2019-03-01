@@ -5,7 +5,7 @@ const SiteController=require('app/controllers/SiteController')
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+/* Site Controller */
 router.get('/site',SiteController.index);
 
 module.exports = router;
