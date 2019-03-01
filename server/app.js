@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var csrf = require('csurf');
+
 require('app-module-path').addPath(__dirname);
 
 var indexRouter = require('app/routes/index');
@@ -38,5 +40,24 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+// secure app config
+app.use(csrf({ cookie: true }));
+app.use( function (req, res, next) {
+  res.locals.csrfToken = req.csrfToken()
+  next()
+});
+app.post('*', function (req, res, next) {
+  res.locals.csrfToken = req.csrfToken()
+  next()
+});
+
+//end secure config
+
+
+
+
+
 
 module.exports = app;
