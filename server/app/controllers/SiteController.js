@@ -1,4 +1,4 @@
-const controller = require('app/controllers/controller');
+const controller = require('./controller');
 
 class SiteController extends  controller{
 
