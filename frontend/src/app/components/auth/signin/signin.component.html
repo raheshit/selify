@@ -3,15 +3,29 @@
   <div class="row">
     <div class="col-lg-4 ">
 
-      <form>
+      <form [formGroup]="signinForm" novalidate>
         <div class="form-group ">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input formControlName="user_name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <div *ngIf="signinForm.controls['user_name'].invalid && (signinForm.controls['user_name'].dirty || signinForm.controls['user_name'].touched)" class="alert alert-danger">
+            <div *ngIf="signinForm.controls['user_name'].errors.required">
+              Person Name is required.
+            </div>
+          </div>
         </div>
+
+
+
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+          <div *ngIf="signinForm.controls['password'].invalid && (signinForm.controls['password'].dirty || signinForm.controls['password'].touched)" class="alert alert-danger">
+            <div *ngIf="signinForm.controls['password'].errors.required">
+              Person Name is required.
+            </div>
+          </div>
         </div>
         <div class="form-check">
           <input type="checkbox" class="form-check-input rtl" id="exampleCheck1">
@@ -19,9 +33,6 @@
         </div>
         <button type="submit" class="btn btn-primary">ورود </button>
       </form>
-
-
-
     </div>
 
   </div>

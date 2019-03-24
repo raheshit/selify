@@ -7,7 +7,8 @@ import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlimLoadingBarModule
+    SlimLoadingBarModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
