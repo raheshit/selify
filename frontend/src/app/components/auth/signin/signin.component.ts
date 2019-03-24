@@ -20,6 +20,13 @@ export class SigninComponent implements OnInit {
     });
   }
 
+  signinsend(){
+
+    console.log(this.signinForm)
+
+
+  }
+
   ngOnInit() {
   }
 
