@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-4 ">
 
-      <form [formGroup]="signinForm" novalidate (ngSubmit)="signinsend()">
+      <form [formGroup]="signinForm"  (ngSubmit)="signinsend()">
         <div class="form-group ">
           <label for="exampleInputEmail1">Email address</label>
           <input formControlName="user_name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
